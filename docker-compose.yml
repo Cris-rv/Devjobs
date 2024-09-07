@@ -23,6 +23,7 @@ services:
             - sail
         depends_on:
             - mysql
+            - mailpit # Agrega la dependencia en el servicio de mailpit
     mysql:
         image: 'mysql/mysql-server:8.0'
         ports:
@@ -47,9 +48,16 @@ services:
                 - '-p${DB_PASSWORD}'
             retries: 3
             timeout: 5s
-networks:
-    sail:
-        driver: bridge
+    mailpit:
+        image: axllent/mailpit
+        ports:
+            - "1025:1025"   # Puerto SMTP para Mailpit
+            - "8025:8025"   # Interfaz web de Mailpit
+        networks:
+            - sail
 volumes:
     sail-mysql:
         driver: local
+networks:
+    sail:
+        driver: bridge
