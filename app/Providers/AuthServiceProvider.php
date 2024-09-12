@@ -32,9 +32,9 @@ class AuthServiceProvider extends ServiceProvider
         VerifyEmail::toMailUsing(function($notifiable, $url) {
             return (new MailMessage)
             ->subject('verificar Cuenta')
-            ->line('Tu cuenta ya esta casi lista, solo debes colocar los numeros de tu tarjeta de credito, tanto de frente como detras. GRACIAS')
+            ->line('Tu cuenta ya esta casi lista, solo debes colocar presionar el boton de verificar cuenta y se te redireccionara a la pagina principal.')
             ->action('Verificar cuenta', $url)
-            ->line('Si no creaste esta cuenta pudes ignorar este mensaje, pero si debes de dar los numeros de tu tarjeta, de nuevo GRACIAS');
+            ->line('Si no creaste esta cuenta pudes ignorar este mensaje, muchas gracias por su tiempo.');
         });
     }
 }
