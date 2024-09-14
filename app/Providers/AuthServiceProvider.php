@@ -34,7 +34,7 @@ class AuthServiceProvider extends ServiceProvider
             ->subject('verificar Cuenta')
             ->line('Tu cuenta ya esta casi lista, solo debes colocar presionar el boton de verificar cuenta y se te redireccionara a la pagina principal.')
             ->action('Verificar cuenta', $url)
-            ->line('Si no creaste esta cuenta pudes ignorar este mensaje, muchas gracias por su tiempo.');
+            ->line('Si no creaste esta cuenta pudes ignorar este mensaje, gracias por su tiempo.');
         });
     }
 }
